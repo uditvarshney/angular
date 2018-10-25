@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +7,15 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'hello-udit';
+
+  inputText:string;
+  onKeyUp($event){
+    this.inputText=$event.target.value;
+  }
+
+  inputFromGrandChild:string;
+  getFromParent(data:string){
+    //console.log("main parent"+data);
+    this.inputFromGrandChild= data;
+  }
 }
